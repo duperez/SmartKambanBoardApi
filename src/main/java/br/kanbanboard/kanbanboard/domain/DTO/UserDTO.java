@@ -4,6 +4,8 @@ import br.kanbanboard.kanbanboard.domain.entity.User;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
+import java.util.Optional;
+
 @AllArgsConstructor
 @Data
 public class UserDTO {

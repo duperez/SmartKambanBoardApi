@@ -28,14 +28,20 @@ public class UserController {
 
     @GetMapping("/{id}")
     @ResponseBody
-    public ResponseEntity findOnde(@PathVariable Long id) {
-        return ResponseEntity.ok(new Response("ble"));
+    public ResponseEntity findOnde(@PathVariable String id) {
+        return ResponseEntity.ok(userService.findById(id));
     }
 
     @PostMapping
     @ResponseBody
-    public ResponseEntity save(@PathVariable UserDTO userDTO){
-        return ResponseEntity.ok(new Response("bll"));
+    public ResponseEntity save(@PathVariable UserDTO userDTO) {
+        return ResponseEntity.ok(userService.save(userDTO));
+    }
+
+    @PutMapping
+    @ResponseBody
+    public ResponseEntity update(@PathVariable UserDTO userDTO) {
+        return ResponseEntity.ok(userService.update(userDTO));
     }
 
 }
